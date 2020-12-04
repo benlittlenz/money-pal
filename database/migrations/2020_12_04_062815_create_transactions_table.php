@@ -18,10 +18,9 @@ class CreateTransactionsTable extends Migration
             $table->date('date');
             $table->foreignId('category_id')->constrained('categories');
             $table->string('payee')->nullable();
-            $table->integer('amount');
+            $table->decimal('amount');
             $table->string('notes')->nullable();
-            $table->foreignId('category_id')->constrained('categories');
-        
+            $table->foreignId('account_id')->constrained('accounts');
             $table->timestamps();
         });
     }
